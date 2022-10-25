@@ -19,6 +19,9 @@ use App\Http\Controllers\CertificateGeneratorController;
 // });
 
 Route::get('/generate-certificate', [CertificateGeneratorController::class, 'create']);
+// Route::get('/generate-pdf', [CertificateGeneratorController::class, 'generatePDF']);
+
+
 
 Route::get('/certificate', function(){
     return view('certificate');

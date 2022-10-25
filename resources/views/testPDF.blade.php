@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif:wght@400;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
     
     <!-- CSS only -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> --}}
 
     <style>
 
@@ -42,7 +42,7 @@
             position: absolute;
             z-index: 9999;
             font-size: 99px;
-            font-family: 'Great Vibes', cursive;
+            /* font-family: 'Great Vibes', cursive; */
             top: 292px;
             left: 105px;
         }
@@ -70,7 +70,7 @@
         <img src="{{asset('/images/cert.png')}}" class="" alt="">
 
         <div class="name">
-            Fatima Firoz Alji
+            {{$name}}
         </div>
 
         <div class="description">

@@ -11,6 +11,9 @@ use Illuminate\Queue\SerializesModels;
 use Spatie\Browsershot\Browsershot;
 use Storage;
 
+use Dompdf\Dompdf;
+
+
 class GenerateCertificateJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -32,29 +35,20 @@ class GenerateCertificateJob implements ShouldQueue
      */
     public function handle()
     {
-
-        
-
-        // // path to store
-        // $pathToImage = 'public/screenshot/';        
-        $path = storage_path('app/screenshot/certificate.png');
         // Browsershot API
         $screenshot = Browsershot::url('http://127.0.0.1:8000/certificate')
-             ->setScreenshotType('jpeg')
-            ->windowSize(1200, 600)
-            ->setOption('viewport.deviceScaleFactor', 2)
+            ->setScreenshotType('png')
+            ->windowSize(1920, 1080)
+            ->select('.cert-body')
+            ->setOption('viewport.deviceScaleFactor', 3)
             ->waitUntilNetworkIdle()
             ->setDelay(1000)
-            ->save($path);
+            ->screenshot();
 
         // // file nane to store
-        // $fileNameToStore =  'certificate.jpeg';
+        $fileNameToStore =  'cert.png';
 
-        // Storage::put('public/screenshot/'.$fileNameToStore, $screenshot);
-
-        // Browsershot::html('<h1>Hello world!!</h1>')->save('example.pdf');
-
-        // return 'done';      
+        Storage::put('public/screenshot/'.$fileNameToStore, $screenshot);           
     } 
 
 

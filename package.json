@@ -17,6 +17,6 @@
         "resolve-url-loader": "^3.1.0"
     },
     "dependencies": {
-        "puppeteer": "^19.1.2"
+        "puppeteer": "^13.7.0"
     }
 }

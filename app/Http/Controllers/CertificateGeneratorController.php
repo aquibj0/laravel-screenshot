@@ -6,21 +6,27 @@ use Illuminate\Http\Request;
 use Spatie\Browsershot\Browsershot;
 use Storage;
 use App\Jobs\GenerateCertificateJob;
+use PDF;
 
 class CertificateGeneratorController extends Controller
 {
 
     public function create(){
-       
-        // // return $pdf;
-        GenerateCertificateJob::dispatch()->delay(addSeconds(2));
-
-        return 'Job added to queue';
         
-        // $path = storage_path('app/screenshot/certificate.png');
+        GenerateCertificateJob::dispatch()->delay(now());
+        
+        return 'Job added to queue';
 
-        // $screenshot = Browsershot::url('https:fueler.io')
-        //     ->save($path);
     }
+    
 
+    // public function generatePDF(){
+    //     $data = [
+    //         'name' => 'Aquib Jawed',
+    //     ];
+           
+    //     $pdf = PDF::loadView('testPDF', $data);
+     
+    //     return $pdf->download('certificate.pdf');
+    // }
 }
