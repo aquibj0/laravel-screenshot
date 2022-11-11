@@ -28,7 +28,7 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background: url('/images/cert.png');
+            background: url('/images/cert-final.png');
             background-position: center;
             background-size: 100%;
             overflow: hidden;
@@ -43,14 +43,19 @@
             z-index: 9999;
             font-size: 99px;
             font-family: 'Great Vibes', cursive;
-            top: 292px;
-            left: 105px;
+            top: 281.5px;
+            left: 65px;
+            text-transform: lowercase;
+        }
+        .name:first-letter,
+        .name:first-line {
+            text-transform: capitalize;
         }
         .description{
             position: absolute;
             z-index: 9999;            
-            top: 442px;
-            left: 105px;
+            top: 430px;
+            left: 65px;
         }
         .description p{
             font-size: 22px;
@@ -67,14 +72,14 @@
 </head>
 <body>
     <div class="cert-body">
-        <img src="{{asset('/images/cert.png')}}" class="" alt="">
+        <img src="{{asset('/images/cert-final.png')}}" class="" alt="">
 
         <div class="name">
-            Fatima Firoz Alji
+            {{$student->name}}
         </div>
 
         <div class="description">
-            <p><i>of, <span>JIS College of Engineering, Kalyani</span>, for attending the webinar on</i></p>
+            <p><i>of, <span>{{$student->university}}</span>, for attending the webinar on</i></p>
         </div>
 
     </div>

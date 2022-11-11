@@ -67,16 +67,7 @@
 </head>
 <body>
     <div class="cert-body">
-        <img src="{{asset('/images/cert.png')}}" class="" alt="">
-
-        <div class="name">
-            {{$name}}
-        </div>
-
-        <div class="description">
-            <p><i>of, <span>JIS College of Engineering, Kalyani</span>, for attending the webinar on</i></p>
-        </div>
-
+        <img src="{{$certificate_path}}" class="" alt="">
     </div>
 </body>
 </html>
